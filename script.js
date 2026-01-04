@@ -77,6 +77,9 @@ function renderTraining() {
     if (e.key === "Enter") {
       e.preventDefault();
       userAnswer = input.value;
+
+      // IMPORTANT: remove focus and listener before changing screen
+      input.blur();
       renderFeedback();
     }
   });
@@ -107,6 +110,7 @@ function renderFeedback() {
     }
   }
 
+  // NEW listener only after feedback is fully rendered
   document.addEventListener("keydown", onEnter);
 }
 
