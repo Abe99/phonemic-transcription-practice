@@ -1,0 +1,67 @@
+:root {
+  --bg: #0f1115;
+  --fg: #e6e6e6;
+  --muted: #9aa0a6;
+  --correct: #2ecc71;
+  --incorrect: #e74c3c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Noto Sans", system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#app {
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.word {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  font-size: 1.8rem;
+  padding: 0.6rem;
+  background: #1a1d24;
+  color: var(--fg);
+  border: 1px solid #333;
+  outline: none;
+  text-align: center;
+}
+
+input[type="text"]:focus {
+  border-color: #666;
+}
+
+.muted {
+  color: var(--muted);
+  margin-top: 1rem;
+}
+
+.feedback {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.correct {
+  color: var(--correct);
+}
+
+.incorrect {
+  color: var(--incorrect);
+}
