@@ -1,67 +1,73 @@
 :root {
-  --bg: #0f1115;
-  --fg: #e6e6e6;
-  --muted: #9aa0a6;
-  --correct: #2ecc71;
-  --incorrect: #e74c3c;
-}
-
-* {
-  box-sizing: border-box;
+    --bg-color: #0a0a0a;
+    --text-primary: #ffffff;
+    --text-secondary: #888888;
+    --accent-correct: #4caf50;
+    --accent-incorrect: #f44336;
+    --font-main: 'Noto Sans', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
 }
 
 body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--fg);
-  font-family: "Noto Sans", system-ui, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
 #app {
-  width: 100%;
-  max-width: 600px;
-  padding: 2rem;
-  text-align: center;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
 }
 
-.word {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    letter-spacing: -1px;
 }
 
-input[type="text"] {
-  width: 100%;
-  font-size: 1.8rem;
-  padding: 0.6rem;
-  background: #1a1d24;
-  color: var(--fg);
-  border: 1px solid #333;
-  outline: none;
-  text-align: center;
+p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
 
-input[type="text"]:focus {
-  border-color: #666;
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--text-secondary);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    text-align: center;
+    outline: none;
+    width: 100%;
+    padding: 10px 0;
 }
 
-.muted {
-  color: var(--muted);
-  margin-top: 1rem;
+input:focus {
+    border-color: var(--text-primary);
 }
 
-.feedback {
-  font-size: 1.5rem;
-  margin-top: 1rem;
+.feedback-ipa {
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    margin: 1rem 0;
 }
 
-.correct {
-  color: var(--correct);
-}
+.correct { color: var(--accent-correct); }
+.incorrect { color: var(--accent-incorrect); }
 
-.incorrect {
-  color: var(--incorrect);
+.instruction-footer {
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
