@@ -1,68 +1,119 @@
 /**
- * DATASET: British English Phonemic Transcriptions
- * Derived from Cambridge Online Dictionary
+ * DATASET: Chapter 1 - Short Vowels
+ * Structured by sections with embedded IPA from Cambridge Online Dictionary
  */
-const DATASET = [
-    { "word": "quit", "ipa": "/kwɪt/", "group": 1 }, { "word": "ram", "ipa": "/ræm/", "group": 1 },
-    { "word": "wolf", "ipa": "/wʊlf/", "group": 1 }, { "word": "egg", "ipa": "/eɡ/", "group": 1 },
-    { "word": "trick", "ipa": "/trɪk/", "group": 1 }, { "word": "buzz", "ipa": "/bʌz/", "group": 1 },
-    { "word": "scant", "ipa": "/skænt/", "group": 1 }, { "word": "swap", "ipa": "/swɒp/", "group": 1 },
-    { "word": "cliff", "ipa": "/klɪf/", "group": 1 }, { "word": "flood", "ipa": "/flʌd/", "group": 1 },
-    { "word": "quest", "ipa": "/kwest/", "group": 1 }, { "word": "skull", "ipa": "/skʌl/", "group": 1 },
-    { "word": "guess", "ipa": "/ɡes/", "group": 2 }, { "word": "squid", "ipa": "/skwɪd/", "group": 2 },
-    { "word": "helm", "ipa": "/helm/", "group": 2 }, { "word": "rub", "ipa": "/rʌb/", "group": 2 },
-    { "word": "scab", "ipa": "/skæb/", "group": 2 }, { "word": "smog", "ipa": "/smɒɡ/", "group": 2 },
-    { "word": "peg", "ipa": "/peɡ/", "group": 2 }, { "word": "snug", "ipa": "/snʌɡ/", "group": 2 },
-    { "word": "quilt", "ipa": "/kwɪlt/", "group": 2 }, { "word": "crack", "ipa": "/kræk/", "group": 2 },
-    { "word": "knot", "ipa": "/nɒt/", "group": 2 }, { "word": "bull", "ipa": "/bʊl/", "group": 2 },
-    { "word": "kick", "ipa": "/kɪk/", "group": 3 }, { "word": "strut", "ipa": "/strʌt/", "group": 3 },
-    { "word": "floss", "ipa": "/flɒs/", "group": 3 }, { "word": "scrum", "ipa": "/skrʌm/", "group": 3 },
-    { "word": "book", "ipa": "/bʊk/", "group": 3 }, { "word": "sweat", "ipa": "/swet/", "group": 3 },
-    { "word": "cough", "ipa": "/kɒf/", "group": 3 }, { "word": "slam", "ipa": "/slæm/", "group": 3 },
-    { "word": "duck", "ipa": "/dʌk/", "group": 3 }, { "word": "sieve", "ipa": "/sɪv/", "group": 3 },
-    { "word": "blob", "ipa": "/blɒb/", "group": 3 }, { "word": "twist", "ipa": "/twɪst/", "group": 3 },
-    { "word": "gulf", "ipa": "/ɡʌlf/", "group": 4 }, { "word": "spell", "ipa": "/spel/", "group": 4 },
-    { "word": "doll", "ipa": "/dɒl/", "group": 4 }, { "word": "foot", "ipa": "/fʊt/", "group": 4 },
-    { "word": "clump", "ipa": "/klʌmp/", "group": 4 }, { "word": "plait", "ipa": "/plæt/", "group": 4 },
-    { "word": "scan", "ipa": "/skæn/", "group": 4 }, { "word": "fix", "ipa": "/fɪks/", "group": 4 },
-    { "word": "twelve", "ipa": "/twelv/", "group": 4 }, { "word": "blonde", "ipa": "/blɒnd/", "group": 4 },
-    { "word": "hymn", "ipa": "/hɪm/", "group": 4 }, { "word": "drum", "ipa": "/drʌm/", "group": 4 },
-    { "word": "hook", "ipa": "/hʊk/", "group": 5 }, { "word": "knack", "ipa": "/næk/", "group": 5 },
-    { "word": "sculpt", "ipa": "/skʌlpt/", "group": 5 }, { "word": "whelk", "ipa": "/welk/", "group": 5 },
-    { "word": "bronze", "ipa": "/brɒnz/", "group": 5 }, { "word": "frizz", "ipa": "/frɪz/", "group": 5 },
-    { "word": "gut", "ipa": "/ɡʌt/", "group": 5 }, { "word": "gram", "ipa": "/ɡræm/", "group": 5 },
-    { "word": "quell", "ipa": "/kwel/", "group": 5 }, { "word": "frost", "ipa": "/frɒst/", "group": 5 },
-    { "word": "swab", "ipa": "/swɒb/", "group": 5 }, { "word": "hem", "ipa": "/hem/", "group": 5 },
-    { "word": "stud", "ipa": "/stʌd/", "group": 6 }, { "word": "breast", "ipa": "/brest/", "group": 6 },
-    { "word": "smock", "ipa": "/smɒk/", "group": 6 }, { "word": "build", "ipa": "/bɪld/", "group": 6 },
-    { "word": "pat", "ipa": "/pæt/", "group": 6 }, { "word": "milk", "ipa": "/mɪlk/", "group": 6 },
-    { "word": "realm", "ipa": "/relm/", "group": 6 }, { "word": "blitz", "ipa": "/blɪts/", "group": 6 },
-    { "word": "pull", "ipa": "/pʊl/", "group": 6 }, { "word": "sulk", "ipa": "/sʌlk/", "group": 6 },
-    { "word": "sob", "ipa": "/sɒb/", "group": 6 }, { "word": "ant", "ipa": "/ænt/", "group": 6 },
-    { "word": "fib", "ipa": "/fɪb/", "group": 7 }, { "word": "crumb", "ipa": "/krʌm/", "group": 7 },
-    { "word": "stress", "ipa": "/stres/", "group": 7 }, { "word": "sock", "ipa": "/sɒk/", "group": 7 },
-    { "word": "spill", "ipa": "/spɪl/", "group": 7 }, { "word": "smell", "ipa": "/smel/", "group": 7 },
-    { "word": "pulse", "ipa": "/pʌls/", "group": 7 }, { "word": "frock", "ipa": "/frɒk/", "group": 7 },
-    { "word": "flex", "ipa": "/fleks/", "group": 7 }, { "word": "clan", "ipa": "/klæn/", "group": 7 },
-    { "word": "lapse", "ipa": "/læps/", "group": 7 }, { "word": "frog", "ipa": "/frɒɡ/", "group": 8 },
-    { "word": "mud", "ipa": "/mʌd/", "group": 8 }, { "word": "swim", "ipa": "/swɪm/", "group": 8 },
-    { "word": "hump", "ipa": "/hʌmp/", "group": 8 }, { "word": "scamp", "ipa": "/skæmp/", "group": 8 },
-    { "word": "clock", "ipa": "/klɒk/", "group": 8 }, { "word": "wool", "ipa": "/wʊl/", "group": 8 },
-    { "word": "pond", "ipa": "/pɒnd/", "group": 8 }, { "word": "cull", "ipa": "/kʌl/", "group": 8 },
-    { "word": "lamb", "ipa": "/læm/", "group": 8 }, { "word": "mock", "ipa": "/mɒk/", "group": 8 },
-    { "word": "zip", "ipa": "/zɪp/", "group": 8 }, { "word": "swift", "ipa": "/swɪft/", "group": 9 },
-    { "word": "stamp", "ipa": "/stæmp/", "group": 9 }, { "word": "pant", "ipa": "/pænt/", "group": 9 },
-    { "word": "mob", "ipa": "/mɒb/", "group": 9 }, { "word": "kiss", "ipa": "/kɪs/", "group": 9 },
-    { "word": "weld", "ipa": "/weld/", "group": 9 }, { "word": "quip", "ipa": "/kwɪp/", "group": 9 },
-    { "word": "script", "ipa": "/skrɪpt/", "group": 9 }, { "word": "dud", "ipa": "/dʌd/", "group": 9 },
-    { "word": "stood", "ipa": "/stʊd/", "group": 9 }, { "word": "sand", "ipa": "/sænd/", "group": 9 },
-    { "word": "silk", "ipa": "/sɪlk/", "group": 9 }, { "word": "slop", "ipa": "/slɒp/", "group": 10 },
-    { "word": "slab", "ipa": "/slæb/", "group": 10 }, { "word": "sprint", "ipa": "/sprɪnt/", "group": 10 },
-    { "word": "plump", "ipa": "/plʌmp/", "group": 10 }, { "word": "crust", "ipa": "/krʌst/", "group": 10 },
-    { "word": "whip", "ipa": "/wɪp/", "group": 10 }, { "word": "bog", "ipa": "/bɒɡ/", "group": 10 },
-    { "word": "disc", "ipa": "/dɪsk/", "group": 10 }, { "word": "rook", "ipa": "/rʊk/", "group": 10 },
-    { "word": "rot", "ipa": "/rɒt/", "group": 10 }, { "word": "mill", "ipa": "/mɪl/", "group": 10 },
-    { "word": "gland", "ipa": "/ɡlænd/", "group": 10 }
+const CHAPTER_DATA = [
+  {
+    "section": "The kit /ɪ/ vowel",
+    "exercise_set": [
+      { "word": "big", "ipa": "/bɪɡ/" }, { "word": "still", "ipa": "/stɪl/" }, { "word": "list", "ipa": "/lɪst/" },
+      { "word": "film", "ipa": "/fɪlm/" }, { "word": "win", "ipa": "/wɪn/" }, { "word": "trip", "ipa": "/trɪp/" },
+      { "word": "pick", "ipa": "/pɪk/" }, { "word": "six", "ipa": "/sɪks/" }, { "word": "give", "ipa": "/ɡɪv/" },
+      { "word": "quick", "ipa": "/kwɪk/" }, { "word": "kid", "ipa": "/kɪd/" }, { "word": "skin", "ipa": "/skɪn/" },
+      { "word": "hill", "ipa": "/hɪl/" }, { "word": "miss", "ipa": "/mɪs/" }, { "word": "hit", "ipa": "/hɪt/" },
+      { "word": "bit", "ipa": "/bɪt/" }, { "word": "risk", "ipa": "/rɪsk/" }, { "word": "tip", "ipa": "/tɪp/" },
+      { "word": "bill", "ipa": "/bɪl/" }, { "word": "mix", "ipa": "/mɪks/" }, { "word": "sick", "ipa": "/sɪk/" },
+      { "word": "split", "ipa": "/splɪt/" }, { "word": "twin", "ipa": "/twɪn/" }, { "word": "fit", "ipa": "/fɪt/" },
+      { "word": "sit", "ipa": "/sɪt/" }, { "word": "hip", "ipa": "/hɪp/" }, { "word": "tin", "ipa": "/tɪn/" },
+      { "word": "kill", "ipa": "/kɪl/" }, { "word": "stick", "ipa": "/stɪk/" }, { "word": "lift", "ipa": "/lɪft/" }
+    ]
+  },
+  {
+    "section": "The trap /æ/ vowel",
+    "exercise_set": [
+      { "word": "man", "ipa": "/mæn/" }, { "word": "back", "ipa": "/bæk/" }, { "word": "tax", "ipa": "/tæks/" },
+      { "word": "plan", "ipa": "/plæn/" }, { "word": "mass", "ipa": "/mæs/" }, { "word": "track", "ipa": "/træk/" },
+      { "word": "tag", "ipa": "/tæɡ/" }, { "word": "add", "ipa": "/æd/" }, { "word": "van", "ipa": "/væn/" },
+      { "word": "fact", "ipa": "/fækt/" }, { "word": "brand", "ipa": "/brænd/" }, { "word": "fat", "ipa": "/fæt/" },
+      { "word": "stand", "ipa": "/stænd/" }, { "word": "act", "ipa": "/ækt/" }, { "word": "vat", "ipa": "/væt/" },
+      { "word": "pack", "ipa": "/pæk/" }, { "word": "tab", "ipa": "/tæb/" }, { "word": "black", "ipa": "/blæk/" },
+      { "word": "rant", "ipa": "/rænt/" }, { "word": "snack", "ipa": "/snæk/" }, { "word": "fan", "ipa": "/fæn/" },
+      { "word": "wrap", "ipa": "/ræp/" }, { "word": "gas", "ipa": "/ɡæs/" }, { "word": "lab", "ipa": "/læb/" },
+      { "word": "ban", "ipa": "/bæn/" }, { "word": "lack", "ipa": "/læk/" }, { "word": "cat", "ipa": "/kæt/" },
+      { "word": "flat", "ipa": "/flæt/" }, { "word": "hand", "ipa": "/hænd/" }, { "word": "snap", "ipa": "/snæp/" }
+    ]
+  },
+  {
+    "section": "The kit /ɪ/, trap /æ/ revision",
+    "exercise_set": [
+      { "word": "tap", "ipa": "/tæp/" }, { "word": "mat", "ipa": "/mæt/" }, { "word": "trim", "ipa": "/trɪm/" },
+      { "word": "strand", "ipa": "/strænd/" }, { "word": "tick", "ipa": "/tɪk/" }, { "word": "rack", "ipa": "/ræk/" },
+      { "word": "lip", "ipa": "/lɪp/" }, { "word": "drag", "ipa": "/dræɡ/" }, { "word": "pin", "ipa": "/pɪn/" },
+      { "word": "rim", "ipa": "/rɪm/" }, { "word": "lap", "ipa": "/læp/" }, { "word": "grin", "ipa": "/ɡrɪn/" },
+      { "word": "lad", "ipa": "/læd/" }, { "word": "wig", "ipa": "/wɪɡ/" }, { "word": "scrap", "ipa": "/skræp/" },
+      { "word": "grill", "ipa": "/ɡrɪl/" }, { "word": "bat", "ipa": "/bæt/" }, { "word": "wit", "ipa": "/wɪt/" },
+      { "word": "span", "ipa": "/spæn/" }, { "word": "lid", "ipa": "/lɪd/" }, { "word": "valve", "ipa": "/vælv/" },
+      { "word": "stiff", "ipa": "/stɪf/" }, { "word": "skim", "ipa": "/skɪm/" }, { "word": "wax", "ipa": "/wæks/" },
+      { "word": "wrist", "ipa": "/rɪst/" }, { "word": "grip", "ipa": "/ɡrɪp/" }, { "word": "trap", "ipa": "/træp/" },
+      { "word": "pill", "ipa": "/pɪl/" }, { "word": "knit", "ipa": "/nɪt/" }, { "word": "tram", "ipa": "/træm/" }
+    ]
+  },
+  {
+    "section": "The dress /e/ vowel",
+    "exercise_set": [
+      { "word": "best", "ipa": "/best/" }, { "word": "next", "ipa": "/nekst/" }, { "word": "web", "ipa": "/web/" },
+      { "word": "help", "ipa": "/help/" }, { "word": "set", "ipa": "/set/" }, { "word": "well", "ipa": "/wel/" },
+      { "word": "press", "ipa": "/pres/" }, { "word": "red", "ipa": "/red/" }, { "word": "let", "ipa": "/let/" },
+      { "word": "end", "ipa": "/end/" }, { "word": "bread", "ipa": "/bred/" }, { "word": "rent", "ipa": "/rent/" },
+      { "word": "text", "ipa": "/tekst/" }, { "word": "pet", "ipa": "/pet/" }, { "word": "head", "ipa": "/hed/" },
+      { "word": "den", "ipa": "/den/" }, { "word": "rest", "ipa": "/rest/" }, { "word": "friend", "ipa": "/frend/" },
+      { "word": "step", "ipa": "/step/" }, { "word": "dress", "ipa": "/dres/" }, { "word": "bed", "ipa": "/bed/" },
+      { "word": "bell", "ipa": "/bel/" }, { "word": "neck", "ipa": "/nek/" }, { "word": "desk", "ipa": "/desk/" },
+      { "word": "spread", "ipa": "/spred/" }, { "word": "pen", "ipa": "/pen/" }, { "word": "wet", "ipa": "/wet/" },
+      { "word": "mess", "ipa": "/mes/" }, { "word": "hell", "ipa": "/hel/" }, { "word": "ten", "ipa": "/ten/" }
+    ]
+  },
+  {
+    "section": "The kit, trap, dress revision",
+    "exercise_set": [
+      { "word": "nest", "ipa": "/nest/" }, { "word": "wag", "ipa": "/wæɡ/" }, { "word": "vet", "ipa": "/vet/" },
+      { "word": "lick", "ipa": "/lɪk/" }, { "word": "bent", "ipa": "/bent/" }, { "word": "limb", "ipa": "/lɪm/" },
+      { "word": "melt", "ipa": "/melt/" }, { "word": "flint", "ipa": "/flɪnt/" }, { "word": "axe", "ipa": "/æks/" },
+      { "word": "pest", "ipa": "/pest/" }, { "word": "drift", "ipa": "/drɪft/" }, { "word": "rag", "ipa": "/ræɡ/" },
+      { "word": "drip", "ipa": "/drɪp/" }, { "word": "pram", "ipa": "/præm/" }, { "word": "sift", "ipa": "/sɪft/" },
+      { "word": "vent", "ipa": "/vent/" }, { "word": "fig", "ipa": "/fɪɡ/" }, { "word": "tract", "ipa": "/trækt/" },
+      { "word": "skid", "ipa": "/skɪd/" }, { "word": "tread", "ipa": "/tred/" }, { "word": "din", "ipa": "/dɪn/" },
+      { "word": "nip", "ipa": "/nɪp/" }, { "word": "sap", "ipa": "/sæp/" }, { "word": "deck", "ipa": "/dek/" },
+      { "word": "gift", "ipa": "/ɡɪft/" }, { "word": "dam", "ipa": "/dæm/" }, { "word": "frisk", "ipa": "/frɪsk/" },
+      { "word": "crest", "ipa": "/krest/" }, { "word": "glint", "ipa": "/ɡlɪnt/" }, { "word": "ramp", "ipa": "/ræmp/" },
+      { "word": "kilt", "ipa": "/kɪlt/" }, { "word": "plaid", "ipa": "/plæd/" }, { "word": "lilt", "ipa": "/lɪlt/" },
+      { "word": "nick", "ipa": "/nɪk/" }, { "word": "glen", "ipa": "/ɡlen/" }, { "word": "kit", "ipa": "/kɪt/" },
+      { "word": "damp", "ipa": "/dæmp/" }, { "word": "lag", "ipa": "/læɡ/" }, { "word": "sniff", "ipa": "/snɪf/" },
+      { "word": "crab", "ipa": "/kræb/" }
+    ]
+  },
+  {
+    "section": "The lot /ɒ/ vowel",
+    "exercise_set": [
+      { "word": "top", "ipa": "/tɒp/" }, { "word": "want", "ipa": "/wɒnt/" }, { "word": "stop", "ipa": "/stɒp/" },
+      { "word": "log", "ipa": "/lɒɡ/" }, { "word": "stock", "ipa": "/stɒk/" }, { "word": "cost", "ipa": "/kɒst/" },
+      { "word": "rock", "ipa": "/rɒk/" }, { "word": "hot", "ipa": "/hɒt/" }, { "word": "golf", "ipa": "/ɡɒlf/" },
+      { "word": "box", "ipa": "/bɒks/" }, { "word": "loss", "ipa": "/lɒs/" }, { "word": "bomb", "ipa": "/bɒm/" },
+      { "word": "spot", "ipa": "/spɒt/" }, { "word": "god", "ipa": "/ɡɒd/" }, { "word": "boss", "ipa": "/bɒs/" },
+      { "word": "block", "ipa": "/blɒk/" }, { "word": "crop", "ipa": "/krɒp/" }, { "word": "plot", "ipa": "/plɒt/" },
+      { "word": "dog", "ipa": "/dɒɡ/" }, { "word": "swan", "ipa": "/swɒn/" }, { "word": "rob", "ipa": "/rɒb/" },
+      { "word": "squad", "ipa": "/skwɒd/" }, { "word": "bond", "ipa": "/bɒnd/" }, { "word": "fox", "ipa": "/fɒks/" },
+      { "word": "cross", "ipa": "/krɒs/" }, { "word": "drop", "ipa": "/drɒp/" }, { "word": "lock", "ipa": "/lɒk/" },
+      { "word": "pot", "ipa": "/pɒt/" }, { "word": "what", "ipa": "/wɒt/" }
+    ]
+  },
+  {
+    "section": "Short vowels revision (Mixed)",
+    "exercise_set": [
+      { "word": "quit", "ipa": "/kwɪt/" }, { "word": "ram", "ipa": "/ræm/" }, { "word": "wolf", "ipa": "/wʊlf/" },
+      { "word": "egg", "ipa": "/eɡ/" }, { "word": "trick", "ipa": "/trɪk/" }, { "word": "buzz", "ipa": "/bʌz/" },
+      { "word": "scant", "ipa": "/skænt/" }, { "word": "swap", "ipa": "/swɒp/" }, { "word": "cliff", "ipa": "/klɪf/" },
+      { "word": "flood", "ipa": "/flʌd/" }, { "word": "quest", "ipa": "/kwest/" }, { "word": "skull", "ipa": "/skʌl/" },
+      { "word": "guess", "ipa": "/ɡes/" }, { "word": "squid", "ipa": "/skwɪd/" }, { "word": "helm", "ipa": "/helm/" },
+      { "word": "rub", "ipa": "/rʌb/" }, { "word": "scab", "ipa": "/skæb/" }, { "word": "smog", "ipa": "/smɒɡ/" },
+      { "word": "peg", "ipa": "/peɡ/" }, { "word": "snug", "ipa": "/snʌɡ/" }, { "word": "quilt", "ipa": "/kwɪlt/" },
+      { "word": "crack", "ipa": "/kræk/" }, { "word": "knot", "ipa": "/nɒt/" }, { "word": "bull", "ipa": "/bʊl/" },
+      { "word": "kick", "ipa": "/kɪk/" }, { "word": "strut", "ipa": "/strʌt/" }, { "word": "floss", "ipa": "/flɒs/" },
+      { "word": "scrum", "ipa": "/skrʌm/" }, { "word": "book", "ipa": "/bʊk/" }, { "word": "sweat", "ipa": "/swet/" },
+      { "word": "cough", "ipa": "/kɒf/" }, { "word": "slam", "ipa": "/slæm/" }, { "word": "duck", "ipa": "/dʌk/" },
+      { "word": "sieve", "ipa": "/sɪv/" }, { "word": "blob", "ipa": "/blɒb/" }, { "word": "twist", "ipa": "/twɪst/" }
+    ]
+  }
 ];
 
 /**
@@ -70,6 +121,7 @@ const DATASET = [
  */
 const State = {
     INTRO: 'intro',
+    SELECT_SECTION: 'select',
     TRAINING: 'training',
     FEEDBACK: 'feedback',
     COMPLETED: 'completed'
@@ -78,12 +130,13 @@ const State = {
 let currentState = State.INTRO;
 let sessionData = [];
 let currentIndex = 0;
+let selectedSectionIndex = 0;
 let lastResult = { correct: false, userVal: '', correctVal: '', word: '' };
 
 const app = document.getElementById('app');
 
 /**
- * Fisher-Yates Shuffle Algorithm
+ * Fisher-Yates Shuffle
  */
 function shuffle(array) {
     let m = array.length, t, i;
@@ -97,15 +150,6 @@ function shuffle(array) {
 }
 
 /**
- * Evaluates the transcription
- * Strips slashes / / for evaluation as per rules
- */
-function checkAnswer(userIn, correctIpa) {
-    const cleanCorrect = correctIpa.replace(/\//g, '');
-    return userIn === cleanCorrect;
-}
-
-/**
  * UI Render Logic
  */
 function render() {
@@ -115,14 +159,33 @@ function render() {
         case State.INTRO:
             app.innerHTML = `
                 <h1>IPA Trainer</h1>
-                <p>You will see a word. Type its phonemic transcription.<br>Case-sensitive. Exact match only.</p>
-                <div class="instruction-footer">Press Enter to start</div>
+                <p>Deliberate practice for English phonemic transcription.<br>Version 2.0: Section Based Training.</p>
+                <div class="instruction-footer">Press Enter to choose section</div>
+            `;
+            break;
+
+        case State.SELECT_SECTION:
+            let sectionList = CHAPTER_DATA.map((s, idx) => {
+                const active = idx === selectedSectionIndex ? 'style="color: var(--accent-correct);"' : '';
+                const arrow = idx === selectedSectionIndex ? '→ ' : '&nbsp;&nbsp;';
+                return `<div ${active}>${arrow} [${idx + 1}] ${s.section}</div>`;
+            }).join('');
+
+            app.innerHTML = `
+                <h2>Select Section</h2>
+                <div style="text-align: left; display: inline-block; font-family: var(--font-mono); line-height: 2;">
+                    ${sectionList}
+                </div>
+                <div class="instruction-footer">Arrows to move • Enter to start</div>
             `;
             break;
 
         case State.TRAINING:
             const item = sessionData[currentIndex];
             app.innerHTML = `
+                <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">
+                    ${CHAPTER_DATA[selectedSectionIndex].section}
+                </p>
                 <h1>${item.word}</h1>
                 <input type="text" id="ipa-input" autocomplete="off" spellcheck="false">
                 <div class="instruction-footer">Press Enter to submit</div>
@@ -132,10 +195,8 @@ function render() {
 
         case State.FEEDBACK:
             const statusClass = lastResult.correct ? 'correct' : 'incorrect';
-            const statusText = lastResult.correct ? 'CORRECT' : 'INCORRECT';
             app.innerHTML = `
-                <h1 class="${statusClass}">${statusText}</h1>
-                <p>Word: ${lastResult.word}</p>
+                <h1 class="${statusClass}">${lastResult.correct ? 'CORRECT' : 'INCORRECT'}</h1>
                 <div class="feedback-ipa">
                     Target: <span class="correct">${lastResult.correctVal}</span><br>
                     Yours: <span class="${statusClass}">${lastResult.userVal || '(empty)'}</span>
@@ -146,9 +207,9 @@ function render() {
 
         case State.COMPLETED:
             app.innerHTML = `
-                <h1>Finished</h1>
-                <p>Training session completed for ${DATASET.length} words.</p>
-                <div class="instruction-footer">Press Enter to restart</div>
+                <h1>Section Completed</h1>
+                <p>You finished "${CHAPTER_DATA[selectedSectionIndex].section}"</p>
+                <div class="instruction-footer">Press Enter to return to menu</div>
             `;
             break;
     }
@@ -158,48 +219,61 @@ function render() {
  * Global Keyboard Controller
  */
 window.addEventListener('keydown', (e) => {
+    // Navigation Keys for Selection Screen
+    if (currentState === State.SELECT_SECTION) {
+        if (e.key === 'ArrowDown') {
+            selectedSectionIndex = (selectedSectionIndex + 1) % CHAPTER_DATA.length;
+            render();
+            return;
+        }
+        if (e.key === 'ArrowUp') {
+            selectedSectionIndex = (selectedSectionIndex - 1 + CHAPTER_DATA.length) % CHAPTER_DATA.length;
+            render();
+            return;
+        }
+        // Direct number selection
+        if (!isNaN(e.key) && e.key > 0 && e.key <= CHAPTER_DATA.length) {
+            selectedSectionIndex = parseInt(e.key) - 1;
+            render();
+        }
+    }
+
+    // Progression Key
     if (e.key !== 'Enter') return;
 
     switch (currentState) {
         case State.INTRO:
-            sessionData = shuffle([...DATASET]);
+            currentState = State.SELECT_SECTION;
+            break;
+
+        case State.SELECT_SECTION:
+            sessionData = shuffle([...CHAPTER_DATA[selectedSectionIndex].exercise_set]);
             currentIndex = 0;
             currentState = State.TRAINING;
-            render();
             break;
 
         case State.TRAINING:
             const input = document.getElementById('ipa-input');
-            const currentItem = sessionData[currentIndex];
-            const isCorrect = checkAnswer(input.value, currentItem.ipa);
-            
+            const target = sessionData[currentIndex].ipa.replace(/\//g, '');
             lastResult = {
-                correct: isCorrect,
+                correct: input.value === target,
                 userVal: input.value,
-                correctVal: currentItem.ipa.replace(/\//g, ''),
-                word: currentItem.word
+                correctVal: target,
+                word: sessionData[currentIndex].word
             };
-
             currentState = State.FEEDBACK;
-            render();
             break;
 
         case State.FEEDBACK:
             currentIndex++;
-            if (currentIndex >= sessionData.length) {
-                currentState = State.COMPLETED;
-            } else {
-                currentState = State.TRAINING;
-            }
-            render();
+            currentState = (currentIndex >= sessionData.length) ? State.COMPLETED : State.TRAINING;
             break;
 
         case State.COMPLETED:
-            currentState = State.INTRO;
-            render();
+            currentState = State.SELECT_SECTION;
             break;
     }
+    render();
 });
 
-// Initial Load
 render();
