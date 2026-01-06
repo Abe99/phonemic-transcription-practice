@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPA Trainer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-theme">
@@ -29,10 +32,10 @@
 
             <main>
                 <div id="instruction-text"></div>
-                <div id="word-display"></div>
+                <div id="word-display" class="ipa-text"></div>
                 <div class="input-wrapper">
-                    <input type="text" id="ipa-input" spellcheck="false" autocomplete="off" autofocus>
-                    <div id="feedback"></div>
+                    <input type="text" id="ipa-input" class="ipa-text" spellcheck="false" autocomplete="off" autofocus>
+                    <div id="feedback" class="ipa-text"></div>
                 </div>
             </main>
 
