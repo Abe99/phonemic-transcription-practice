@@ -14,12 +14,19 @@
         <div id="menu-view" class="view">
             <header>
                 <h1>IPA_PRACTICE</h1>
-                <p class="subtitle">Select a module to begin</p>
+                <p class="subtitle">Select a module</p>
             </header>
             <nav id="chapter-list"></nav>
-            <footer>
-                <p class="hint">Press number keys [1, 2] to select</p>
-            </footer>
+            <footer><p class="hint">Numbers [1-2] to select</p></footer>
+        </div>
+
+        <div id="section-menu-view" class="view hidden">
+            <header>
+                <h1 id="active-chapter-title"></h1>
+                <p class="subtitle">Select a section</p>
+            </header>
+            <nav id="section-list"></nav>
+            <footer><p class="hint">Keys [1-9, A-Z] to select • Esc to back</p></footer>
         </div>
 
         <div id="exercise-view" class="view hidden">
@@ -27,14 +34,14 @@
                 <div id="meta-info">
                     <span id="chapter-label"></span> / <span id="section-label"></span>
                 </div>
-                <button id="exit-btn" title="Back to menu [Esc]">×</button>
+                <button id="exit-btn" title="Back [Esc]">×</button>
             </header>
 
             <main>
                 <div id="instruction-text"></div>
                 <div id="word-display" class="ipa-text"></div>
                 <div class="input-wrapper">
-                    <input type="text" id="ipa-input" class="ipa-text" spellcheck="false" autocomplete="off" autofocus>
+                    <input type="text" id="ipa-input" class="ipa-text" spellcheck="false" autocomplete="off">
                     <div id="feedback" class="ipa-text"></div>
                 </div>
             </main>
@@ -44,7 +51,7 @@
                     <span id="counter">0 / 0</span>
                     <div class="progress-bar-bg"><div id="progress-fill"></div></div>
                 </div>
-                <p class="hint">Enter to check • Esc to exit</p>
+                <p class="hint">Enter to check • Esc to back</p>
             </footer>
         </div>
     </div>
