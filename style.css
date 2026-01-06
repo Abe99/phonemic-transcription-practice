@@ -1,13 +1,27 @@
 :root {
-    --bg: #0f0f0f; --surface: #1a1a1a; --text: #e0e0e0; --dim-text: #888;
-    --accent: #ffffff; --success: #4ade80; --error: #f87171; --border: #333;
-    --font-ui: 'Inter', sans-serif; --font-ipa: 'Noto Sans', sans-serif;
+    --bg: #0f0f0f;
+    --surface: #1a1a1a;
+    --text: #e0e0e0;
+    --dim-text: #888;
+    --accent: #ffffff;
+    --success: #4ade80;
+    --error: #f87171;
+    --border: #333;
+    --font-ui: 'Inter', sans-serif;
+    --font-ipa: 'Noto Sans', sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-    background: var(--bg); color: var(--text); font-family: var(--font-ui);
-    display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-ui);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
 #app { width: 100%; max-width: 550px; padding: 20px; }
@@ -23,8 +37,14 @@ nav::-webkit-scrollbar { width: 4px; }
 nav::-webkit-scrollbar-thumb { background: var(--border); }
 
 .item {
-    padding: 16px 20px; background: var(--surface); border: 1px solid var(--border);
-    cursor: pointer; transition: 0.15s; display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: 0.15s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .item:hover { border-color: var(--accent); background: #222; }
 .item-key { color: var(--dim-text); font-family: monospace; font-size: 0.8rem; }
@@ -37,12 +57,20 @@ nav::-webkit-scrollbar-thumb { background: var(--border); }
 
 .input-wrapper { position: relative; }
 input {
-    width: 100%; background: none; border: none; border-bottom: 1px solid var(--border);
-    color: var(--text); font-size: 1.8rem; text-align: center; padding: 12px 0; outline: none;
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 12px 0;
+    outline: none;
 }
 input:focus { border-color: var(--accent); }
 
 #feedback { height: 24px; font-size: 0.85rem; text-align: center; margin-top: 15px; }
+
 .progress-info { display: flex; align-items: center; gap: 15px; color: var(--dim-text); font-size: 0.7rem; font-family: monospace; }
 .progress-bar-bg { flex-grow: 1; height: 1px; background: var(--border); }
 #progress-fill { height: 100%; background: var(--accent); width: 0%; transition: width 0.4s ease; }
