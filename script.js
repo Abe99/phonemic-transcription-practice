@@ -1,6 +1,6 @@
+// Data integrated from your JSON files
 const DATA = [
     {
-        id: 1,
         title: "Short Vowels",
         sections: [
             {
@@ -16,7 +16,6 @@ const DATA = [
         ]
     },
     {
-        id: 2,
         title: "Schwa & Unstressed",
         sections: [
             {
@@ -28,15 +27,8 @@ const DATA = [
     }
 ];
 
-let state = {
-    view: 'menu',
-    chapter: null,
-    sectionIdx: 0,
-    wordIdx: 0,
-    words: []
-};
+let state = { view: 'menu', chapter: null, sectionIdx: 0, wordIdx: 0, words: [] };
 
-// Elements
 const menuView = document.getElementById('menu-view');
 const exerciseView = document.getElementById('exercise-view');
 const chapterList = document.getElementById('chapter-list');
@@ -45,7 +37,15 @@ const feedback = document.getElementById('feedback');
 
 function init() {
     renderMenu();
-    document.addEventListener('keydown', handleGlobalKeys);
+    document.addEventListener('keydown', (e) => {
+        if (state.view === 'menu') {
+            const num = parseInt(e.key);
+            if (num > 0 && num <= DATA.length) startChapter(num - 1);
+        } else {
+            if (e.key === 'Escape') exitToMenu();
+            if (e.key === 'Enter') checkAnswer();
+        }
+    });
 }
 
 function renderMenu() {
@@ -59,21 +59,10 @@ function renderMenu() {
     });
 }
 
-function handleGlobalKeys(e) {
-    if (state.view === 'menu') {
-        const num = parseInt(e.key);
-        if (num > 0 && num <= DATA.length) startChapter(num - 1);
-    } else {
-        if (e.key === 'Escape') exitToMenu();
-        if (e.key === 'Enter') checkAnswer();
-    }
-}
-
 function startChapter(idx) {
     state.view = 'exercise';
     state.chapter = DATA[idx];
     state.sectionIdx = 0;
-    state.wordIdx = 0;
     menuView.classList.add('hidden');
     exerciseView.classList.remove('hidden');
     loadSection();
@@ -89,11 +78,9 @@ function loadSection() {
     const section = state.chapter.sections[state.sectionIdx];
     state.words = Object.keys(section.pairs);
     state.wordIdx = 0;
-    
     document.getElementById('chapter-label').textContent = state.chapter.title;
     document.getElementById('section-label').textContent = section.name;
     document.getElementById('instruction-text').textContent = section.instr;
-    
     renderWord();
 }
 
@@ -117,9 +104,9 @@ function checkAnswer() {
     const input = ipaInput.value.trim();
     const section = state.chapter.sections[state.sectionIdx];
     const correct = section.pairs[state.words[state.wordIdx]];
+    const cleanInput = input.startsWith('/') ? input : `/${input}/`;
 
-    // Allow with or without slashes
-    if (input === correct || `/${input}/` === correct) {
+    if (cleanInput === correct) {
         feedback.textContent = 'CORRECT';
         feedback.style.color = 'var(--success)';
         setTimeout(nextWord, 600);
@@ -138,7 +125,7 @@ function nextWord() {
             state.sectionIdx++;
             loadSection();
         } else {
-            feedback.textContent = 'CHAPTER COMPLETE. PRESS ESC.';
+            feedback.textContent = 'MODULE COMPLETE • ESC TO MENU';
         }
     }
 }
