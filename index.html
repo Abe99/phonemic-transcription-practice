@@ -3,22 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPA Trainer v2.0</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
+    <title>IPA Transcription Practice</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <div id="chapter-selection">
+            <h1>IPA Transcription Practice</h1>
+            <p>Select a chapter to begin:</p>
+            <div id="chapter-list"></div>
+        </div>
 
-    <div id="app">
-        <div class="state-container">
-            <p>Loading dataset...</p>
+        <div id="exercise-page" class="hidden">
+            <button id="back-btn">← Back to Chapters</button>
+            <h1 id="chapter-title"></h1>
+            <div class="section-nav">
+                <button id="prev-section">Previous Section</button>
+                <span id="section-info"></span>
+                <button id="next-section">Next Section</button>
+            </div>
+            
+            <div class="exercise-card">
+                <h2 id="section-name"></h2>
+                <p id="instruction"></p>
+                <div class="word-display">
+                    <span id="current-word"></span>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="ipa-input" placeholder="Type IPA here..." autocomplete="off">
+                    <button id="check-btn">Check</button>
+                </div>
+                <div id="feedback"></div>
+            </div>
+
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <p id="stats">Word 1 of 0</p>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
