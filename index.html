@@ -3,43 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPA Transcription Practice</title>
+    <title>IPA Trainer</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
-        <div id="chapter-selection">
-            <h1>IPA Transcription Practice</h1>
-            <p>Select a chapter to begin:</p>
-            <div id="chapter-list"></div>
+<body class="dark-theme">
+    <div id="app">
+        <div id="menu-view" class="view">
+            <header>
+                <h1>IPA_PRACTICE</h1>
+                <p class="subtitle">Select a module to begin</p>
+            </header>
+            <nav id="chapter-list"></nav>
+            <footer>
+                <p class="hint">Press number keys [1, 2] to select</p>
+            </footer>
         </div>
 
-        <div id="exercise-page" class="hidden">
-            <button id="back-btn">← Back to Chapters</button>
-            <h1 id="chapter-title"></h1>
-            <div class="section-nav">
-                <button id="prev-section">Previous Section</button>
-                <span id="section-info"></span>
-                <button id="next-section">Next Section</button>
-            </div>
-            
-            <div class="exercise-card">
-                <h2 id="section-name"></h2>
-                <p id="instruction"></p>
-                <div class="word-display">
-                    <span id="current-word"></span>
+        <div id="exercise-view" class="view hidden">
+            <header class="exercise-header">
+                <div id="meta-info">
+                    <span id="chapter-label"></span> / <span id="section-label"></span>
                 </div>
-                <div class="input-group">
-                    <input type="text" id="ipa-input" placeholder="Type IPA here..." autocomplete="off">
-                    <button id="check-btn">Check</button>
-                </div>
-                <div id="feedback"></div>
-            </div>
+                <button id="exit-btn" title="Back to menu [Esc]">×</button>
+            </header>
 
-            <div class="progress-container">
-                <div id="progress-bar"></div>
-            </div>
-            <p id="stats">Word 1 of 0</p>
+            <main>
+                <div id="instruction-text"></div>
+                <div id="word-display"></div>
+                <div class="input-wrapper">
+                    <input type="text" id="ipa-input" spellcheck="false" autocomplete="off" autofocus>
+                    <div id="feedback"></div>
+                </div>
+            </main>
+
+            <footer>
+                <div class="progress-info">
+                    <span id="counter">0 / 0</span>
+                    <div class="progress-bar-bg"><div id="progress-fill"></div></div>
+                </div>
+                <p class="hint">Enter to check • Esc to exit</p>
+            </footer>
         </div>
     </div>
     <script src="script.js"></script>
