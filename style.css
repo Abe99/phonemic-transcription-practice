@@ -7,6 +7,10 @@
     --success: #4ade80;
     --error: #f87171;
     --border: #333;
+    /* Primary UI font */
+    --font-ui: 'Inter', -apple-system, sans-serif;
+    /* Transcription font */
+    --font-ipa: 'Noto Sans', sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -14,7 +18,7 @@
 body {
     background-color: var(--bg);
     color: var(--text);
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: var(--font-ui);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,9 +31,14 @@ body {
 .view { display: flex; flex-direction: column; gap: 40px; }
 .hidden { display: none; }
 
+/* Font class for IPA content */
+.ipa-text {
+    font-family: var(--font-ipa) !important;
+}
+
 /* Menu Styling */
-h1 { font-size: 1rem; letter-spacing: 0.2rem; color: var(--dim-text); margin-bottom: 8px; }
-.subtitle { font-size: 1.5rem; font-weight: 300; }
+h1 { font-size: 0.9rem; letter-spacing: 0.2rem; color: var(--dim-text); margin-bottom: 8px; font-weight: 400; }
+.subtitle { font-size: 1.4rem; font-weight: 300; }
 
 #chapter-list { display: flex; flex-direction: column; gap: 12px; }
 .chapter-item {
@@ -37,45 +46,47 @@ h1 { font-size: 1rem; letter-spacing: 0.2rem; color: var(--dim-text); margin-bot
     background: var(--surface);
     border: 1px solid var(--border);
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: 0.15s ease;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
-.chapter-item:hover { border-color: var(--accent); }
-.chapter-key { color: var(--dim-text); font-family: monospace; }
+.chapter-item:hover { border-color: var(--accent); background: #222; }
+.chapter-key { color: var(--dim-text); font-family: monospace; font-size: 0.8rem; }
 
 /* Exercise Styling */
-.exercise-header { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--dim-text); }
-#exit-btn { background: none; border: none; color: var(--dim-text); font-size: 1.5rem; cursor: pointer; }
+.exercise-header { display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--dim-text); text-transform: uppercase; letter-spacing: 0.05rem; }
+#exit-btn { background: none; border: none; color: var(--dim-text); font-size: 1.5rem; cursor: pointer; padding: 5px; }
 
-#instruction-text { font-size: 0.9rem; color: var(--dim-text); text-align: center; }
-#word-display { font-size: 4rem; font-weight: 500; text-align: center; margin: 20px 0; }
+#instruction-text { font-size: 0.85rem; color: var(--dim-text); text-align: center; line-height: 1.4; }
+#word-display { font-size: 3.5rem; font-weight: 500; text-align: center; margin: 20px 0; color: var(--accent); }
 
 .input-wrapper { position: relative; }
 input {
     width: 100%;
     background: none;
     border: none;
-    border-bottom: 2px solid var(--border);
+    border-bottom: 1px solid var(--border);
     color: var(--text);
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-align: center;
-    padding: 10px 0;
+    padding: 12px 0;
     outline: none;
-    transition: border-color 0.3s;
+    transition: border-color 0.2s;
 }
 input:focus { border-color: var(--accent); }
 
 #feedback { 
-    height: 20px; 
-    font-size: 0.9rem; 
+    height: 24px; 
+    font-size: 0.85rem; 
     text-align: center; 
     margin-top: 15px; 
-    font-family: monospace;
+    letter-spacing: 0.05rem;
 }
 
-/* Progress */
-.progress-info { display: flex; align-items: center; gap: 15px; color: var(--dim-text); font-size: 0.8rem; }
-.progress-bar-bg { flex-grow: 1; height: 2px; background: var(--border); }
-#progress-fill { height: 100%; background: var(--accent); width: 0%; transition: 0.3s; }
-.hint { text-align: center; color: var(--dim-text); font-size: 0.7rem; margin-top: 20px; text-transform: uppercase; letter-spacing: 0.1rem; }
+/* Progress bar */
+.progress-info { display: flex; align-items: center; gap: 15px; color: var(--dim-text); font-size: 0.75rem; font-family: monospace; }
+.progress-bar-bg { flex-grow: 1; height: 1px; background: var(--border); }
+#progress-fill { height: 100%; background: var(--accent); width: 0%; transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+.hint { text-align: center; color: var(--dim-text); font-size: 0.65rem; margin-top: 20px; text-transform: uppercase; letter-spacing: 0.1rem; opacity: 0.6; }
